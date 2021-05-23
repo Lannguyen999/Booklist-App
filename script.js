@@ -34,7 +34,16 @@ function removeBook(element){
 }
 
 // Pops up messages
-
+function showAlert(message, className){
+    // Create a div element and insert it before the form 
+    const div = document.createElement('div');
+    div.className = `alert alert-${className}`;
+    div.appendChild(document.createTextNode(message));
+    const container = document.querySelector('.container');
+    container.insertBefore(div,form);
+    // Vanish the message in about 2 seconds
+    setTimeout(() => document.querySelector('.alert').remove(), 2000);
+}
 // Store books
 
 // Clear input
@@ -57,8 +66,9 @@ form.addEventListener('submit', (e) => {
     // Add books
     addBookToList(book);
     // Clear input
-    clearInput();
-
+    clearInput();   
+    // Pop up success message
+    showAlert("Book Added", 'success');
 });
 
 // Remove book event
