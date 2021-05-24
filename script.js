@@ -8,8 +8,13 @@ class Book{
 }
 
 // Get element by id
-const title = document.getElementById('title');
-const author = document.getElementById('author');
+const $ = document.querySelector.bind(document)
+//Sửa tí hihi
+const title = $('#title')
+// const title = document.getElementById('title');
+
+// const author = document.getElementById('author');
+const author = $('#author')
 const isbn = document.getElementById('isbn');
 const list = document.getElementById('book-list');
 const form = document.getElementById('book-form');
