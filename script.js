@@ -15,7 +15,10 @@ const title = $('#title')
 
 // const author = document.getElementById('author');
 const author = $('#author')
-const isbn = document.getElementById('isbn');
+
+// const isbn = document.getElementById('isbn');
+const isbn = $('#isbn')
+
 const list = document.getElementById('book-list');
 const form = document.getElementById('book-form');
 // Add a book
