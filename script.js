@@ -107,16 +107,22 @@ form.addEventListener('submit', (e) => {
     titleValue = title.value;
     authorValue = author.value;
     isbnValue = isbn.value;
-    // Initiate a book 
-    const book = new Book(titleValue, authorValue, isbnValue);
-    // Add book to list
-    addBookToList(book);
-    // Add book to storage
-    addBookToStorage(book);
-    // Clear input
-    clearInput();   
-    // Pop up success message
-    showAlert("Book Added", 'success');
+    // Pop a warning message to get all information from user
+    if(titleValue === '' || authorValue === '' || isbnValue === ''){
+        showAlert("Please fill all information to the form", 'warning');
+    }
+    else{
+        // Initiate a book 
+        const book = new Book(titleValue, authorValue, isbnValue);
+        // Add book to list
+        addBookToList(book);
+        // Add book to storage
+        addBookToStorage(book);
+        // Clear input
+        clearInput();   
+        // Pop up success message
+        showAlert("Book Added", 'success');
+    }
 });
 
 // Remove book event handle
